@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2021 at 03:20 AM
+-- Generation Time: Sep 16, 2021 at 05:26 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -44,15 +44,15 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `id_kategori`, `nama_barang`, `stok`, `harga_modal`, `harga_jual`, `keterangan`, `gambar`) VALUES
-(1, 1, 'Piatos 15 Gram', 100, 4000, 5000, '-', '-'),
-(2, 2, 'Pocari Sweat', 50, 3000, 4000, '-', '-'),
-(3, 7, 'Agumon', 10, 1000, 2000, 'Digimon Tipe Air', 'KTA_PUDJI.jpg'),
-(4, 7, 'Ni Luh Gita Maharani', 9, 9, 9, '9', 'Jumat-Barakah.jpg'),
-(5, 13, 'Agumon', 2, 2, 2, '2', ''),
-(6, 13, 'Agumon', 2, 2, 2, '2', 'Ikramal2.jpg'),
-(7, 4, '2', 2, 2, 2, '2', 'KTA_PUDJI.jpg'),
-(8, 13, 'Raket', 10, 10, 10, '-', 'eko11.jpg'),
-(9, 4, '1', 1, 1, 1, '1', 'AdminLTE 3  DataTables (2).pdf');
+(1, 1, 'Piatos 15 Gram', 100, 4000, 5000, 'Makanan Enak', 'piatos.jpg'),
+(2, 2, 'Pocari Sweat', 50, 3000, 4000, '-', 'pocari.jpg'),
+(3, 4, 'Baygon', 10, 29000, 32000, 'Baygon Semprot', 'baygon.jpg'),
+(4, 10, 'Sepeda Wimcycle', 10, 1500000, 1750000, '-', 'wimcyacle.jpg'),
+(5, 13, 'Raket Yonex', 5, 175000, 200000, '-', 'yonex.jpg'),
+(6, 13, 'Sepatu', 10, 45000, 50000, '-', 'sepatu.jpg'),
+(7, 1, 'Fiesta Chicken Nugget', 100, 10000, 20000, '-', 'fiesta.jpg'),
+(8, 4, 'Sapu', 10, 7000, 10000, 'Merk OK', 'sapu.jpg'),
+(10, 17, 'BBCA', 2000, 32000, 32100, 'Pembelian Minimal 1 Lot (100)', 'bca.png');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 (7, 'Digimon'),
 (8, 'Miaow'),
 (9, 'Pikachu'),
-(10, 'Tanaman1'),
+(10, 'Hobi'),
 (11, 'Camilan'),
 (12, 'Elektronik'),
 (13, 'Alat Olahraga'),
@@ -103,6 +103,17 @@ CREATE TABLE `pelanggan` (
   `username` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`id_pelanggan`, `no_identitas`, `nama`, `alamat`, `no_telepon`, `email`, `username`, `password`) VALUES
+(1, '5171XXXXXX', 'Iqbal Febrian', '-', '08989898', '-', 'iqbal', 'iqbal'),
+(2, '5171XXXXXX', 'Deny Pramana', '-', '-', 'denygaminggg@gmail.com', '1234', '1234'),
+(3, '5171XXXXXX', 'Edmund ', '-', '08989898', '-', 'edmun', 'edmun'),
+(4, '517100034', 'Salsabila Aja', 'Dalung', '08908999879', 'salsabilaajah@gmail.com', 'salsa', 'salsa'),
+(5, '5171XXXXXX', 'Irfan Bahdim', '-', '-', 'irfanbahdim@gmail.com', 'irfanbahdim', 'irfanbahdim');
 
 -- --------------------------------------------------------
 
@@ -215,7 +226,7 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_barang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -227,7 +238,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pelanggan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
