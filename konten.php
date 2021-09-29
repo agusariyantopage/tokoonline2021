@@ -8,6 +8,9 @@
     else if($_GET['p']=='barang'){
         include "konten/barang.php";
     }
+    else if($_GET['p']=='provinsi'){
+        include "konten/provinsi.php";
+    }
     else if($_GET['p']=='pelanggan'){
         include "konten/pelanggan.php";
     }
