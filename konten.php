@@ -14,4 +14,7 @@
     else if($_GET['p']=='pelanggan'){
         include "konten/pelanggan.php";
     }
+    else if($_GET['p']=='user'){
+        include "konten/user.php";
+    }
 ?>
