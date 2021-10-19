@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "admin/koneksi.php";
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
 
 <body>
     <!-- NavBar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
         <!-- Just an image -->
         
         <a class="navbar-brand" href="index.php"><i class="fa fa-shopping-bag"></i> MyToko 1.0</a>
@@ -28,7 +29,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -64,6 +65,48 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?page=hubungi-kami">Hubungi Kami</a>
                 </li>
+            </ul>
+
+            <!-- Kelompok Menu Transaksi -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>            
+                </li>
+               
+                <!-- Menu Muncul Saat Login Sukses (START) -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Guntur Ajah
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profil</a>
+                        <a class="dropdown-item" href="#">Daftar Transaksi</a>
+                        <a class="dropdown-item" href="#">Bantuan</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Logout
+                    </a>            
+                </li>
+                <!-- Menu Muncul Saat Login Sukses (END) -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=daftar">
+                        Daftar
+                    </a>            
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=login">
+                        Login
+                    </a>            
+                </li>
+                
+                
                 <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->

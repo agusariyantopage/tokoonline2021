@@ -17,6 +17,13 @@
     else if($_GET['page']=='hubungi-kami') {
         include "konten/hubungi-kami.php";    
     }
+    else if($_GET['page']=='daftar') {
+        include "konten/daftar.php";    
+    }
+    else if($_GET['page']=='login') {
+        include "konten/login.php";    
+    }
+    
     
 
 ?>
