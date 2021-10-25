@@ -23,6 +23,9 @@
     else if($_GET['page']=='login') {
         include "konten/login.php";    
     }
+    else if($_GET['page']=='keranjang') {
+        include "konten/keranjang.php";    
+    }
     
     
 

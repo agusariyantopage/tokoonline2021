@@ -70,16 +70,20 @@
             <!-- Kelompok Menu Transaksi -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="index.php?page=keranjang">
                         <i class="fas fa-shopping-cart"></i>
                     </a>            
                 </li>
-               
+<?php
+                // Pengecekan Status Login 
+                if(!empty($_SESSION['frontend_user_nama'])){
+                    // Tampilkan Menu Nama User dan Logout                
+?>
                 <!-- Menu Muncul Saat Login Sukses (START) -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i> Guntur Ajah
+                        <i class="fas fa-user"></i> <?php echo $_SESSION['frontend_user_nama']; ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profil</a>
@@ -89,12 +93,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="aksi/logout.php">
                         Logout
                     </a>            
                 </li>
                 <!-- Menu Muncul Saat Login Sukses (END) -->
-
+<?php
+                } else {
+                    // Tampilkan Menu Login dan Daftar               
+?>
+                <!-- Menu Muncul Saat Belum Login (START) -->
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?page=daftar">
                         Daftar
@@ -105,8 +113,10 @@
                         Login
                     </a>            
                 </li>
-                
-                
+                <!-- Menu Muncul Saat Belum Login (END) -->
+<?php
+                }
+?>                
                 <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->
