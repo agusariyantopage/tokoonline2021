@@ -26,6 +26,12 @@
     else if($_GET['page']=='keranjang') {
         include "konten/keranjang.php";    
     }
+    else if($_GET['page']=='check-out') {
+        include "konten/check-out.php";    
+    }
+    else if($_GET['page']=='sukses-checkout') {
+        include "konten/sukses-checkout.php";    
+    }
     
     
 

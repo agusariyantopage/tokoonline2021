@@ -10,18 +10,20 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Keranjang</li>
+            <li class="breadcrumb-item active" aria-current="page">Konfirmasi Check-Out</li>
         </ol>
     </nav>
     <!-- Batas Breadcumb -->
 
     <!-- Konten Utama -->
     <div class="container-fluid">
-       <h6>Keranjang Belanja</h6>
+       
+
+        <h6>Detail Transaksi</h6>
        <br>
        <table class="table table-bordered">
            <thead class="thead-dark">
-               <th>Aksi</th>
+               
                <th>No.</th>
                <th>Deskripsi</th>
                <th>Harga</th>
@@ -40,25 +42,12 @@
                 $grandtotal=$grandtotal+$subtotal;
             
 ?>           
-           <tr>
-               <td>
-                   <a href="aksi/keranjang_hapus.php?id=<?php echo $kolom1['id_keranjang']; ?>"><i class="fas fa-trash"></i></a>                   
-               </td>
+           <tr>               
                <td><?php echo $no; ?></td>
                <td><?php echo $kolom1['nama_barang']; ?></td>
                <td align="right"><?php echo number_format($kolom1['harga']); ?></td>
-               <td align="right" style="max-width:80px;">
-                   <form action="aksi/keranjang_ubah.php" method="post">
-                       <input type="hidden" name="id" value="<?php echo $kolom1['id_keranjang']; ?>"> 
-                       <div class="form-row">
-                            <div class="col">
-                                <input type="number" name="qty" class="form-control" value="<?php echo number_format($kolom1['jumlah']); ?>">
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-warning" type="submit"><i class="fas fa-edit"></i></button>
-                            </div>
-                       </div>
-                   </form>
+               <td align="right">
+                    <?php echo number_format($kolom1['jumlah']); ?>
                </td>
                <td align="right"><?php echo number_format($subtotal); ?></td>
            </tr>
@@ -66,24 +55,37 @@
             }
 ?>           
            <tr>
-               <td colspan="5"><b>GRANDTOTAL</b></td>
+               <td colspan="4"><b>GRANDTOTAL</b></td>
                <td align="right"><b><?php echo number_format($grandtotal); ?></b></td>
            </tr>
        </table> 
        <br>
-        <div class="row">
-            <div class="col-sm-6">
-                <a href="index.php?page=produk-all">
-                    <button class="btn btn-success"><i class="fas fa-arrow-right"></i> Lanjut Belanja</button>
-                </a>
-            </div>
-            <div class="col-sm-6 text-right">
-                <a href="index.php?page=check-out">
-                <button class="btn btn-info"><i class="fas fa-file-invoice"></i> Check-Out</button>
-                </a>
-            </div>
-        </div>
-        <br>
+
+       <h6>Detail Pembeli</h6>
+        <form action="aksi/keranjang_checkout.php" method="post">
+            <input type="hidden" name="total" value="<?php echo $grandtotal; ?>">
+            <label for="nama">Nama Pembeli</label>
+            <input type="text" class="form-control" name="nama" value="<?php echo $_SESSION['frontend_user_nama']; ?>" readonly>
+            <label for="nama_penerima">Nama Penerima</label>
+            <input type="text" class="form-control" name="nama_penerima" required>
+            <label for="alamat">Alamat Penerima</label>
+            <textarea name="alamat" rows="3" class="form-control" required></textarea>
+            <label for="provinsi">Provinsi Pengiriman</label>
+            <select name="provinsi" class="form-control" required>
+                <option value="">-- Pilih Provinsi Pengiriman --</option>
+            <?php
+                $sql2="select * from provinsi order by provinsi";
+                $query2=mysqli_query($koneksi,$sql2);
+                while($kolom2=mysqli_fetch_array($query2)){
+                    echo "<option value='$kolom2[id_provinsi]'>$kolom2[provinsi]</option>";
+                }
+            ?>
+            </select>
+            <br>
+            <button class="btn btn-info" type="submit">TETAPKAN</button>
+        </form>
+       <br>
+       
     </div>
     <!-- Batas Konten Utama -->
 <?php

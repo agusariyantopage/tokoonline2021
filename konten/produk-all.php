@@ -27,7 +27,7 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>&nbsp;
+                        <a href="aksi/keranjang_tambah.php?id=<?php echo $kolom1['id_barang']; ?>&harga=<?php echo $kolom1['harga_jual']; ?>"><i class="fas fa-shopping-cart"></i></a>&nbsp;
                         <a href="#"><i class="fas fa-info-circle"></i></a>
                     </div>
                 </div>                
