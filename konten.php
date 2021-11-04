@@ -32,6 +32,9 @@
     else if($_GET['page']=='sukses-checkout') {
         include "konten/sukses-checkout.php";    
     }
+    else if($_GET['page']=='daftar-transaksi') {
+        include "konten/daftar-transaksi.php";    
+    }
     
     
 

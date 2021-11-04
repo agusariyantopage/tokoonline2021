@@ -87,7 +87,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profil</a>
-                        <a class="dropdown-item" href="#">Daftar Transaksi</a>
+                        <a class="dropdown-item" href="index.php?page=daftar-transaksi">Daftar Transaksi</a>
                         <a class="dropdown-item" href="#">Bantuan</a>
                     </div>
                 </li>
