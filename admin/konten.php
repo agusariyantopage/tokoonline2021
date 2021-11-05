@@ -17,4 +17,10 @@
     else if($_GET['p']=='user'){
         include "konten/user.php";
     }
+    else if($_GET['p']=='pesanan'){
+        include "konten/pesanan.php";
+    }
+    else if($_GET['p']=='pesanan-edit'){
+        include "konten/pesanan-edit.php";
+    }
 ?>
